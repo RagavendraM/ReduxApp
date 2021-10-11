@@ -1,13 +1,10 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 const HomeScreen = () => {
     // render(){
-    return (<View style={styles.container}>
-        <Text>Welcome Home!!!</Text>
-        <Button><Text>Logout</Text></Button>
-    </View>);
+    return (<View style={styles.container}><Text>Welcome Home!!!</Text></View>);
     // }
 };
 

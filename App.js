@@ -1,11 +1,12 @@
 /* eslint-disable prettier/prettier */
 import { NavigationContainer } from '@react-navigation/native';
-import React, {useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { View, ActivityIndicator } from 'react-native-paper';
 
 import RootStackScreen from './app/RootStackScreen';
-import  AuthContext  from './app/Components/context';
+import {AuthContext} from './app/Components/context';
 import  HomeScreen  from './app/HomeScreen';
+// import  SplashScreen from './app/SplashScreen';
 
 
 const App = () => {
@@ -31,19 +32,19 @@ const App = () => {
     }, 1000);
   });
 
-  if (isLoading) {
-    return (<View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <ActivityIndicator size="large" />
-    </View>);
-  } else {
+  // if (isLoading) {
+  //   return (<View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+  //     <ActivityIndicator size="large" />
+  //   </View>);
+  // } else {
+    console.log(userToken);
     return (
       <AuthContext.Provider value={authContext}>
         <NavigationContainer>
-          console.log(userToken);
-           {userToken !== null ? <RootStackScreen /> : <HomeScreen />}
+           {userToken !== null ? (<RootStackScreen />) : (<HomeScreen />)}
         </NavigationContainer>
       </AuthContext.Provider>);
-  }
+  // }
 
 };
 
